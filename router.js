@@ -6,6 +6,7 @@ var jwtCheck = jwt({
   secret: new Buffer('OvS45Uziw_VVvvloByHPOrV7VOZsA2HvCFHQ0QT6i90Q4PHQbnnxlxQ3wLC1MU-A', 'base64'),
   audience: '21jAUBEJTwMKB1GiY5p28cteIqeNBCf0'
 });
+app.get("/",function(req,res){res.sendFile("./public/index.html")});
 app.use('/ank', jwtCheck,function(req,res){
 res.send("logged in")
 
